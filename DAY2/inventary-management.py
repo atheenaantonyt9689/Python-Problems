@@ -1,7 +1,3 @@
-"""inventary managmrntt"""
-from typing import List, Any
-
-
 def create_inventory(items):
     inventory = dict()
     add_items(inventory, items)
@@ -23,8 +19,7 @@ def delete_items(inventory, items):
 
 
 def list_inventory(inventory):
-    output: List[Any] = list()
-    item: object
+    output = list()
     for item in sorted(inventory.items()):
         if item[1] > 0:
             output.append(item)
