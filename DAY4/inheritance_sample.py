@@ -1,5 +1,15 @@
+"""from datetime import datetime
+time_now = datetime.now()
+print(time_now)"""
+from datetime import datetime
+time_now =datetime.now()
+
+
+#date.today()
+#print(date.today().isoformat())
+
 class Book:
-    def __init__(self, title, isbn, author, totalpages):
+    def __init__(self, title, isbn, author, total_pages):
         """
 
         :type isbn: object
@@ -7,15 +17,19 @@ class Book:
         self.title = title
         self.isbn = isbn
         self.author = author
-        self.totalpages = totalpages
+        self.total_pages = total_pages
+        self.published_at = time_now
+
 
     def publish(self):
-        print(self.title, self.isbn, self.author, self.totalpages)
+        
+        print(bool(time_now))
+        print(self.title, self.isbn, self.author, self.total_pages,self.published_at )
 
 
 class Magazine(Book):
-    def __init__(self, title, isbn, author, totalpages, volume, vol_date):
-        super().__init__(title, author, isbn, totalpages)
+    def __init__(self, title, isbn, author, total_pages, volume, vol_date):
+        super().__init__(title, author, isbn, total_pages)
         self.volume = volume
         self.volume_date = vol_date
 
@@ -24,10 +38,13 @@ class Magazine(Book):
 
         :rtype: object
         """
-        print("Title:", self.title, "\n isbn number:", self.isbn, " \nAUTHOR :", self.author, "\nvolume:", self.volume,
-              '\nvolume date', self.volume_date)
+        print("Title:", self.title, "\n isbn number:", self.isbn, " \nAUTHOR :", self.author, "\ntotal pages:" ,self.total_pages,"\nvolume:", self.volume,
+              '\nvolume date', self.volume_date,"time: ",time_now)
 
 
 obj = Magazine("Python", '28', "ATHEEEE", "5566", "myyyyyy", "5732e5676e5723e")
+obj2= Book("aaaa","aaaaaaaaaaa","aaaaaaaa","aaaaaaaaaaa")
+obj2.publish()
+
 
 obj.view()
